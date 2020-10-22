@@ -1,0 +1,8 @@
+[Unit]
+Description=check /storage is mounted
+
+[Service]
+ExecStart=/opt/email_on_fail.sh "[[ -f /dev/mapper/storage0 ]] && [[ -f /dev/mapper/storage1 ]] && [[ -f /dev/mapper/storage2 ]]" "encrypted drives need mounting"
+
+[Install]
+WantedBy=multi-user.target
